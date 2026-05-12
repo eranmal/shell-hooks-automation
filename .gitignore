@@ -1,0 +1,10 @@
+.claude/hooks/data/
+
+*.log
+.command_count
+.reset_commands
+
+.backups/
+
+.DS_Store
+Thumbs.db
