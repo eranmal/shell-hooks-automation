@@ -67,7 +67,7 @@ To use these hooks in a real project, copy the `.claude` directory to your proje
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/shell-hooks-automation.git
+git clone https://github.com/eranmal/shell-hooks-automation.git
 cd shell-hooks-automation
 ```
 
