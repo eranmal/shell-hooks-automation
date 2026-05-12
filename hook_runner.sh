@@ -57,31 +57,6 @@ BLOCKED=0
 WARNINGS=0
 FINAL_EXIT=0
 
-# =============================================================================
-# TODO: Process the config file line by line.
-#
-# For each line in hooks_config.txt:
-#   1. Skip comments (lines starting with '#') and empty lines.
-#   2. Split the line on ':' to get three fields:
-#        CONF_EVENT   — the hook event type (e.g. PreToolUse)
-#        CONF_MATCHER — the tool matcher (e.g. Bash, Edit, or * for all)
-#        CONF_SCRIPT  — the path to the hook script (rest of line after second ':')
-#   3. Skip the line if CONF_EVENT does not match EVENT_TYPE.
-#   4. Skip the line if CONF_MATCHER does not match TOOL_NAME and is not '*'.
-#   5. Increment MATCHED.
-#   6. Resolve the script path: if CONF_SCRIPT starts with './', prepend RUNNER_DIR.
-#   7. Print which script is running (use the CYAN colour).
-#   8. Execute the hook script feeding it the saved stdin (TEMP_FILE).
-#      Capture stderr separately and save the exit code to EXIT_CODE.
-#   9. Based on EXIT_CODE:
-#        0  → print green "✓ Passed",  increment PASSED
-#        2  → print red   "✗ BLOCKED", print stderr if any, increment BLOCKED,
-#             set FINAL_EXIT=2, print chain-stopped message, and break the loop
-#        else→ print yellow "⚠ Warning (exit N)", print stderr if any,
-#             increment WARNINGS
-#  10. Print a blank line after each hook result.
-# =============================================================================
-
 while read -r line; do
     # 1. Skip comment and empty lines
     if echo "$line" | grep -q '^#' || [ -z "$line" ]; then
