@@ -1,4 +1,4 @@
-# Claude Code Shell Hooks Framework
+# Shell Hooks Framework
 
 This framework provides a robust set of **Shell Hooks** for **Claude Code** (Anthropic's CLI-based AI coding assistant). It is designed to add a layer of safety, monitoring, and automation to your AI-driven development workflow by intercepting actions before they occur and managing side effects after they complete.
 
